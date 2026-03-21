@@ -7,6 +7,8 @@ type Props = {
   children: ReactNode;
 };
 
+
+
 export function SmoothScrollProvider({ children }: Props) {
   return (
    
