@@ -9,7 +9,8 @@ type Props = {
 
 export function SmoothScrollProvider({ children }: Props) {
   return (
-    <ReactLenis
+   
+<ReactLenis
   root
   options={{
     lerp: 0.12,
