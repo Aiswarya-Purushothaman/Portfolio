@@ -10,13 +10,13 @@ type Props = {
 export function SmoothScrollProvider({ children }: Props) {
   return (
     <ReactLenis
-    root
-    options={{
-      lerp: 0.12,
-      smoothWheel: true,
-      syncTouch: true
-    }}
-  >
+  root
+  options={{
+    lerp: 0.12,
+    smoothWheel: true,
+    syncTouch: true
+  }}
+>
       {children}
     </ReactLenis>
   );

@@ -3,14 +3,14 @@
 import { Float, Html, OrbitControls } from "@react-three/drei";
 import { GroupProps, useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import type { Mesh } from "three";
+import type { Mesh, Group } from "three";
 
 type HeroWorkspaceProps = GroupProps & {
   mouse: { x: number; y: number };
 };
 
 export function HeroWorkspace({ mouse, ...rest }: HeroWorkspaceProps) {
-  const rig = useRef<Mesh>(null);
+  const rig = useRef<Group>(null);
   const keyboard = useRef<Mesh>(null);
 
   useFrame(() => {
@@ -18,7 +18,6 @@ export function HeroWorkspace({ mouse, ...rest }: HeroWorkspaceProps) {
     rig.current.rotation.y = mouse.x * 0.2;
     rig.current.rotation.x = mouse.y * 0.08;
   });
-
   return (
     <group {...rest}>
       <group ref={rig}>
