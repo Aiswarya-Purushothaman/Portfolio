@@ -19,8 +19,8 @@ const projects = [
       "Stripe",
       "Socket.IO"
     ],
-    hrefDemo: "#",
-    hrefCode: "#"
+    hrefDemo: null,
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/ADHYAYA"
   },
   {
     title: "LikeIt TryIt — E-commerce",
@@ -36,8 +36,67 @@ const projects = [
       "Ajax",
       "jQuery"
     ],
-    hrefDemo: "#",
-    hrefCode: "#"
+    hrefDemo: null,
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/LikeIt-TryIt"
+  }
+];
+
+const miniProjects = [
+  {
+    title: "User Management",
+    description:
+      "Admin-side user management system with secure JWT authentication and global state via Redux.",
+    tech: ["React.js", "Redux", "Node.js", "Express.js", "JWT"],
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/React/tree/main/user-management",
+    hrefDemo: null
+  },
+  {
+    title: "Netflix Clone",
+    description:
+      "Responsive UI mimicking Netflix's design with TMDb API integration for movies, top-rated picks, and genres.",
+    tech: ["React.js", "CSS", "JavaScript", "TMDb API"],
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/React/tree/main/Netflix-Clone",
+    hrefDemo: "https://poetic-pastelito-5ca6c4.netlify.app/"
+  },
+  {
+    title: "OLX Clone",
+    description:
+      "Functional OLX clone where users can add products, upload images, and manage listings using Firebase and Context API.",
+    tech: ["React.js", "Tailwind CSS", "Firebase", "JavaScript"],
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/React/tree/main/olx-react",
+    hrefDemo: "https://poetic-pastelito-5ca6c4.netlify.app/"
+  },
+  {
+    title: "Todo List App",
+    description:
+      "Simple task management app built to solidify understanding of React fundamentals and component-based architecture.",
+    tech: ["React.js"],
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/React/tree/main/Todo",
+    hrefDemo: "https://moonlit-shortbread-06a32f.netlify.app/"
+  },
+  {
+    title: "Weather App",
+    description:
+      "Weather forecast app built to practice TypeScript and React skills with real-time API data.",
+    tech: ["TypeScript", "React.js"],
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/Weather-app-Typescript",
+    hrefDemo: "https://glittering-hamster-6f7e13.netlify.app/"
+  },
+  {
+    title: "Trust Wallet Clone",
+    description:
+      "Simple clone of the Trust Wallet application built to strengthen HTML, CSS, Bootstrap, and JavaScript skills.",
+    tech: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/trust-wallet",
+    hrefDemo: "https://chipper-chaja-6887b9.netlify.app/"
+  },
+  {
+    title: "Talabat Clone",
+    description:
+      "Frontend clone of the Talabat food-delivery platform for polishing responsive layout and Bootstrap skills.",
+    tech: ["HTML", "CSS", "Bootstrap"],
+    hrefCode: "https://github.com/Aiswarya-Purushothaman/talabat-clone",
+    hrefDemo: "https://merry-pika-9b7f46.netlify.app/"
   }
 ];
 
@@ -115,16 +174,6 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="mt-5 flex flex-wrap gap-3">
-                  {/* <button
-                    className="magnetic group relative rounded-full bg-gradient-to-r from-accent-purple to-accent-cyan px-[1.8px] py-[1.8px]"
-                    {...magnetic}
-                    onClick={() => window.open(project.hrefDemo, "_blank")}
-                  >
-                    <div className="magnetic-inner flex items-center gap-2 rounded-full bg-slate-950/95 px-4 py-1.5 text-[0.72rem] font-medium text-slate-50">
-                      <span>Live demo</span>
-                      <span className="text-xs">↗</span>
-                    </div>
-                  </button> */}
                   <button
                     className="magnetic group relative rounded-full border border-slate-700/70 bg-slate-950/80 px-[1.6px] py-[1.6px]"
                     {...magnetic}
@@ -136,6 +185,72 @@ export function ProjectsSection() {
                     </div>
                   </button>
                 </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        {/* Mini Projects */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mt-4"
+        >
+          <p className="text-xs font-mono uppercase tracking-[0.32em] text-slate-400">
+            Mini Projects
+          </p>
+          <h3 className="mt-1 font-display text-xl text-slate-50 sm:text-2xl">
+            Experiments &amp; practice builds.
+          </h3>
+        </motion.div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {miniProjects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              className="group relative flex flex-col rounded-2xl border border-slate-700/50 bg-slate-950/60 p-4 backdrop-blur-md transition-colors duration-300 hover:border-accent-purple/40"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <h4 className="font-display text-[0.95rem] text-slate-100">
+                  {project.title}
+                </h4>
+                <div className="flex shrink-0 gap-1.5">
+                  {project.hrefDemo && (
+                    <button
+                      className="rounded-full border border-slate-700/60 bg-slate-900/70 px-2.5 py-1 text-[0.6rem] font-mono uppercase tracking-[0.18em] text-slate-400 transition-colors duration-200 hover:border-accent-purple/50 hover:text-accent-purple"
+                      onClick={() => window.open(project.hrefDemo!, "_blank")}
+                    >
+                      ↗
+                    </button>
+                  )}
+                  <button
+                    className="rounded-full border border-slate-700/60 bg-slate-900/70 px-2.5 py-1 text-[0.6rem] font-mono uppercase tracking-[0.18em] text-slate-400 transition-colors duration-200 hover:border-accent-cyan/50 hover:text-accent-cyan"
+                    onClick={() => window.open(project.hrefCode, "_blank")}
+                  >
+                    {"</>"}
+                  </button>
+                </div>
+              </div>
+
+              <p className="mt-2 flex-1 text-[0.78rem] leading-relaxed text-slate-400">
+                {project.description}
+              </p>
+
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-slate-900/70 px-2 py-0.5 text-[0.58rem] font-mono uppercase tracking-[0.15em] text-slate-500"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
             </motion.article>
           ))}

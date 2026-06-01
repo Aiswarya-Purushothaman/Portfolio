@@ -3,8 +3,14 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLenis } from "@studio-freight/react-lenis";
 
 export function ScrollScenes() {
+  // Keep ScrollTrigger in sync with Lenis' virtual scroll position
+  useLenis(() => {
+    ScrollTrigger.update();
+  });
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -22,7 +28,9 @@ export function ScrollScenes() {
           trigger: section,
           start: "top 80%",
           end: "bottom 60%",
-          scrub: 0.7
+          // scrub: true means instant follow — Lenis already provides smoothing,
+          // so double-lerp (scrub: 0.7 + lerp) was causing the sluggish hang
+          scrub: true
         }
       });
 

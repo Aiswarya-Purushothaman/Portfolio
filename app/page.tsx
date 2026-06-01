@@ -1,8 +1,9 @@
 "use client";
 
 import { MotionConfig } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import dynamic from "next/dynamic";
+import { useLenis } from "@studio-freight/react-lenis";
 import { HeroSection } from "@/sections/HeroSection";
 import { AboutSection } from "@/sections/AboutSection";
 import { SkillsSection } from "@/sections/SkillsSection";
@@ -24,21 +25,11 @@ const SceneCanvas = dynamic(
 export default function HomePage() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      const value = height > 0 ? scrollTop / height : 0;
-      setScrollProgress(value);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Use Lenis' own scroll event instead of a raw window listener to
+  // avoid firing out of sync with Lenis' animation frame
+  useLenis(({ progress }) => {
+    setScrollProgress(progress);
+  });
 
   return (
     <MotionConfig reducedMotion="user">

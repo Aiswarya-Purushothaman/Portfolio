@@ -53,7 +53,7 @@ export function AboutSection() {
 
             <p className="text-sm text-slate-300/90 sm:text-[0.96rem]">
               I&apos;m Aiswarya, a self-taught MERN Stack Developer based in
-              Palakkad, Kerala, India. Over the last 2.5 years I&apos;ve been
+              Palakkad, Kerala, India. Over the last 2.9 years I&apos;ve been
               working with the MERN stack and its ecosystems to craft scalable,
               maintainable web applications with clean architecture and
               thoughtful user experiences.
@@ -83,7 +83,7 @@ export function AboutSection() {
             <div className="mt-4 grid grid-cols-3 gap-4 text-center text-xs sm:text-sm">
               <div className="flex flex-col gap-1">
                 <span className="text-lg font-semibold text-accent-cyan sm:text-xl">
-                  2.5+
+                  2.9+
                 </span>
                 <span className="text-slate-400">years experience</span>
               </div>

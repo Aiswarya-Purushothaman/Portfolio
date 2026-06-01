@@ -58,7 +58,7 @@ export function HeroSection() {
           </div>
 
           <p className="mx-auto max-w-xl text-sm text-slate-300/85 sm:text-base lg:mx-0">
-            Self-taught MERN Stack Developer with 2.5 years of hands-on
+            Self-taught MERN Stack Developer with 2.9 years of hands-on
             experience building production systems using the MERN stack and its
             frameworks like Next.js and NestJS. I focus on clean architecture,
             secure APIs, and polished UI that balances performance with
@@ -93,7 +93,7 @@ export function HeroSection() {
           <div className="mt-3 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 lg:justify-start">
             <div className="flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/60 px-3 py-1 backdrop-blur-md">
               <span className="h-1 w-3 rounded-full bg-gradient-to-r from-accent-purple to-accent-cyan" />
-              <span>2.5+ years building production-ready web platforms</span>
+              <span>2.9+ years building production-ready web platforms</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-[0.68rem] uppercase tracking-[0.25em] text-accent-cyan">
